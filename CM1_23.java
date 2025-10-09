@@ -19,7 +19,7 @@ public class CM1_23 {
 
         //untuk looping input nilai per matkul
         for (int i = 1; i <= 2; i++) {
-            System.out.println("--- Mata Kuliah " + matkul[i - 1] + " ---");
+            System.out.println("--- Mata Kuliah " + i + ". " + matkul[i - 1] + " ---");
             System.out.print("Nilai UTS : ");
             double uts = sc.nextInt();
             System.out.print("Nilai UAS : ");
@@ -35,33 +35,29 @@ public class CM1_23 {
             status[i - 1] = (avg >= 60) ? true : false; //untuk menyimpan status lulus atau tidak
 
             //untuk menyimpan nilai rata-rata dan grade per matkul
+            average[i - 1] = avg;
             if (avg >= 80) {
-                average[i - 1] = avg;
                 grade[i - 1] = "A";
             } else if (avg >= 73) {
                 grade[i - 1] = "B+";
-                average[i - 1] = avg;
             } else if (avg >= 65) {
                 grade[i - 1] = "B";
-                average[i - 1] = avg;
             } else if (avg >= 60) {
                 grade[i - 1] = "C+";
-                average[i - 1] = avg;
             } else if (avg >= 50) {
                 grade[i - 1] = "C";
-                average[i - 1] = avg;
             } else if (avg >= 39) {
                 grade[i - 1] = "D";
-                average[i - 1] = avg;
             } else {
                 grade[i - 1] = "E";
-                average[i - 1] = avg;
             }
         }
         //untuk menampilkan output header tabel
         System.out.printf("%-30s %-8s %-8s %-8s %-12s %-12s %s%n", "Mata Kuliah", "UTS", "UAS", "TUGAS", "Nilai Akhir", "Nilai Huruf", "Status");
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------");
         
+        System.out.println("Nama : " + nama);
+        System.out.println("NIM : " + nim);
         //untuk menampilkan output isi tabel
         for (int a = 0; a < 2; a++) {
             System.out.printf("%-30s %-8.1f %-8.1f %-8.1f %-12.1f %-12s %s%n", matkul[a], utsData[a], uasData[a], tugasData[a], average[a], grade[a], (status[a] ? "Lulus" : "Tidak Lulus"));
