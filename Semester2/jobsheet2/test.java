@@ -1,7 +1,9 @@
+package Semester2.jobsheet2;
+
 import java.util.Scanner;
 
-public class percobaan3 {
-    public static void main(String[] args) {
+public class test {
+     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String matkulGradeKualifikasi[][] = {{"Pancasila", "", ""}, 
         {"Konsep Tenologi Informasi", "", ""}, 
@@ -20,7 +22,7 @@ public class percobaan3 {
 
         System.out.println("Hasil Konversi Nilai: ");
         System.out.printf("%-40s %12s %12s %12s %20s\n","Mata Kuliah", "Nilai", "Huruf", "Bobot", "Kualifikasi");
-        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------");
         for (int i = 0; i < matkulGradeKualifikasi.length; i++) {
 
             if (nilai[i][0] > 80 && nilai[i][0] <= 100) {
@@ -70,7 +72,6 @@ public class percobaan3 {
         
         double ipk = totalNilai / matkulGradeKualifikasi.length;
         System.out.println("IPK: " + String.format("%.2f", ipk));
-        sc.close();
     }
+
 }
-    

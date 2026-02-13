@@ -5,49 +5,51 @@ import java.util.Scanner;
 public class tugas2 {
     public static Scanner sc = new Scanner(System.in);
 
-    static void inputJadwal(String jadwal[][]){
+    static void inputJadwal(String jadwal[][]) {
         for (int i = 0; i < jadwal.length; i++) {
             System.out.print("Masukkan mata kuliah ke-" + (i + 1) + ": ");
             jadwal[i][0] = sc.nextLine();
-            System.out.print("Masukkan hari kuliah: ");
+            System.out.print("Masukkan ruang kuliah: ");
             jadwal[i][1] = sc.nextLine();
-            System.out.print("Masukkan waktu kuliah: ");
+            System.out.print("Masukkan hari kuliah: ");
             jadwal[i][2] = sc.nextLine();
+            System.out.print("Masukkan waktu kuliah: ");
+            jadwal[i][3] = sc.nextLine();
         }
     }
 
-    static void showJadwal(String jadwal[][]){
+    static void showJadwal(String jadwal[][]) {
         System.out.println("\nJadwal Kuliah:");
         for (int i = 0; i < jadwal.length; i++) {
-            System.out.printf("%s - %s - %s\n", jadwal[i][0], jadwal[i][1], jadwal[i][2]);
+            System.out.printf("%s - %s - %s - %s\n", jadwal[i][0], jadwal[i][1], jadwal[i][2], jadwal[i][3]);
         }
-    }   
+    }
 
-    static void showJadwalByDay(String jadwal[][]){
+    static void showJadwalByDay(String jadwal[][]) {
         System.out.print("\nMasukkan hari yang ingin ditampilkan: ");
         String day = sc.nextLine();
 
         System.out.println("\nJadwal Kuliah pada hari " + day + ":");
         for (int i = 0; i < jadwal.length; i++) {
-            if (jadwal[i][1].equalsIgnoreCase(day)) {
-                System.out.printf("%s - %s\n", jadwal[i][0], jadwal[i][2]);
+            if (jadwal[i][2].equalsIgnoreCase(day)) {
+                System.out.printf("%s - %s - %s\n", jadwal[i][0], jadwal[i][1], jadwal[i][3]);
             }
         }
     }
 
-    static void showJadwalByMatkul (String jadwal[][]){
+    static void showJadwalByMatkul(String jadwal[][]) {
         System.out.print("\nMasukkan mata kuliah yang ingin ditampilkan: ");
         String matkul = sc.nextLine();
 
         System.out.println("\nJadwal Kuliah untuk mata kuliah " + matkul + ":");
         for (int i = 0; i < jadwal.length; i++) {
             if (jadwal[i][0].equalsIgnoreCase(matkul)) {
-                System.out.printf("%s - %s\n", jadwal[i][1], jadwal[i][2]);
+                System.out.printf("%s - %s - %s\n", jadwal[i][1], jadwal[i][2], jadwal[i][3]);
             }
         }
     }
 
-    static void menu(){
+    static void menu() {
         System.out.println("\nMenu:");
         System.out.println("1. Tampilkan semua jadwal");
         System.out.println("2. Tampilkan jadwal berdasarkan hari");
@@ -59,12 +61,12 @@ public class tugas2 {
     public static void main(String[] args) {
         System.out.print("Masukkan jumlah jadwal kuliah: ");
         int n = sc.nextInt();
-        String jadwal[][] = new String[n][3];
+        String jadwal[][] = new String[n][4];
         int menu;
-        
+
         sc.nextLine();
         inputJadwal(jadwal);
-        
+
         do {
             menu();
             menu = sc.nextInt();
