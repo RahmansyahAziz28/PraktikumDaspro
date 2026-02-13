@@ -22,15 +22,15 @@ public class tugas1 {
         System.out.print("Masukkan kode kota (A, B, D, E, F, G, H, L, N): ");
         String kode = sc.nextLine();
 
-        for (int i = 0; i < KOTA.length; i++) {
-            if (KOTA[i][0] == kode.charAt(0)) {
-                System.out.print("Kota tujuan Anda adalah ");
-                for (int j = 0; j < KOTA[i].length && KOTA[i][j] != ' '; j++) {
+        for (int i = 0; i < KODE.length; i++) {
+            if (kode.charAt(0) == KODE[i]) {
+                System.out.print("Kota dengan kode " + kode.charAt(0) + " adalah ");
+                for (int j = 0; j < KOTA[i].length; j++) {
                     System.out.print(KOTA[i][j]);
                 }
                 System.out.println();
-                return;
             }
+            
         }
     }
 }
