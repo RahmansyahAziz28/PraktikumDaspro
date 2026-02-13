@@ -1,3 +1,5 @@
+package Semester1;
+
 import java.util.Scanner;
 
 public class CM1_23 {
