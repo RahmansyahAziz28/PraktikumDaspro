@@ -34,9 +34,6 @@ public class PeminjamanDemo {
                     Buku.tampilkanSemuaBuku(buku, jumlahBuku);
                     break;
                 case 6:
-                    Mahasiswa.tampilkanSemuaMahasiswa(mahasiswa, jumlahMahasiswa);
-                    break;
-                case 7:
                     System.out.println("Terima kasih telah menggunakan program ini!");
                     sc.close();
                     System.exit(0);

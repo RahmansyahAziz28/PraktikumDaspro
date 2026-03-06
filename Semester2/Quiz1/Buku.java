@@ -24,8 +24,7 @@ public class Buku {
         System.out.println("3. Pinjam Buku");
         System.out.println("4. Kembalikan Buku");
         System.out.println("5. Tampilkan Semua Buku");
-        System.out.println("6. Tampilkan Semua Mahasiswa");
-        System.out.println("7. Keluar");
+        System.out.println("6. Keluar");
     }
 
     static int tambahBuku(Scanner sc, Buku[] buku, int jumlahBuku) {

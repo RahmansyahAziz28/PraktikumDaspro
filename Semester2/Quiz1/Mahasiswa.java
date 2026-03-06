@@ -45,14 +45,4 @@ public class Mahasiswa {
         return null;
     }
 
-    static void tampilkanSemuaMahasiswa(Mahasiswa[] daftarMahasiswa, int jumlah) {
-        if (jumlah == 0) {
-            System.out.println("Belum ada mahasiswa yang terdaftar!");
-        } else {
-            System.out.println("\n=== DAFTAR MAHASISWA ===");
-            for (int i = 0; i < jumlah; i++) {
-                daftarMahasiswa[i].cetakInfo();
-            }
-        }
-    }
 }
