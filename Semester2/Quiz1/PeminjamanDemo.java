@@ -11,8 +11,10 @@ public class PeminjamanDemo {
         int jumlahMahasiswa = 0;
         int option;
         
+        Buku.menu();
+
         while (true) {
-            Buku.menu();
+            System.out.println("");
             System.out.print("Pilih menu: ");
             option = sc.nextInt();
             sc.nextLine();
@@ -31,10 +33,10 @@ public class PeminjamanDemo {
                     Buku.prosesKembalikanBuku(sc, buku, mahasiswa, jumlahBuku, jumlahMahasiswa);
                     break;
                 case 5:
-                    Buku.tampilkanSemuaBuku(buku, jumlahBuku);
+                    Buku.tampilkanSemuaBuku(buku, jumlahBuku, mahasiswa, jumlahMahasiswa);
                     break;
                 case 6:
-                    System.out.println("Terima kasih telah menggunakan program ini!");
+                    System.out.println("Terima kasih telah menggunakan sistem perpustakaan!");
                     sc.close();
                     System.exit(0);
                 default:

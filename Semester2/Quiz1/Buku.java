@@ -18,12 +18,12 @@ public class Buku {
     }
 
     static void menu() {
-        System.out.println("\n=== SISTEM PEMINJAMAN BUKU ===");
+    System.out.println("\n=== SISTEM PERPUSTAKAAN ===");
         System.out.println("1. Tambah Buku");
         System.out.println("2. Tambah Mahasiswa");
         System.out.println("3. Pinjam Buku");
         System.out.println("4. Kembalikan Buku");
-        System.out.println("5. Tampilkan Semua Buku");
+        System.out.println("5. Tampilkan Peminjaman");
         System.out.println("6. Keluar");
     }
 
@@ -45,13 +45,15 @@ public class Buku {
         return jumlahBuku;
     }
 
-    void cetakInfo() {
+    void cetakInfo(Mahasiswa[] mahasiswa, int jumlahMahasiswa) {
         System.out.println("Judul: " + judul);
         System.out.println("Kode: " + kode);
         System.out.println("Penulis: " + penulis);
         System.out.println("Status: " + (isAvailable ? "Tersedia" : "Dipinjam"));
+
+        Mahasiswa mhs = Mahasiswa.cariMahasiswa(mahasiswa, jumlahMahasiswa, nim);
         if (!isAvailable) {
-            System.out.println("Dipinjam oleh NIM: " + nim);
+            System.out.println("Dipinjam oleh: " + mhs.nama);
         }
         System.out.println("----------------------------");
     }
@@ -89,13 +91,13 @@ public class Buku {
         return null;
     }
 
-    static void tampilkanSemuaBuku(Buku[] daftarBuku, int jumlah) {
+    static void tampilkanSemuaBuku(Buku[] daftarBuku, int jumlah, Mahasiswa[] mahasiswa, int jumlahMahasiswa) {
         if (jumlah == 0) {
             System.out.println("Belum ada buku yang terdaftar!");
         } else {
             System.out.println("\n=== DAFTAR BUKU ===");
             for (int i = 0; i < jumlah; i++) {
-                daftarBuku[i].cetakInfo();
+                daftarBuku[i].cetakInfo(mahasiswa, jumlahMahasiswa);
             }
         }
     }
