@@ -17,6 +17,35 @@ public class Buku {
         this.nim = "";
     }
 
+    static void menu() {
+        System.out.println("\n=== SISTEM PEMINJAMAN BUKU ===");
+        System.out.println("1. Tambah Buku");
+        System.out.println("2. Tambah Mahasiswa");
+        System.out.println("3. Pinjam Buku");
+        System.out.println("4. Kembalikan Buku");
+        System.out.println("5. Tampilkan Semua Buku");
+        System.out.println("6. Tampilkan Semua Mahasiswa");
+        System.out.println("7. Keluar");
+    }
+
+    static int tambahBuku(Scanner sc, Buku[] buku, int jumlahBuku) {
+        if (jumlahBuku < buku.length) {
+            System.out.print("Masukkan Judul Buku: ");
+            String judul = sc.nextLine();
+            System.out.print("Masukkan Kode Buku: ");
+            String kode = sc.nextLine();
+            System.out.print("Masukkan Penulis Buku: ");
+            String penulis = sc.nextLine();
+
+            buku[jumlahBuku] = new Buku(judul, kode, penulis);
+            jumlahBuku++;
+            System.out.println("Buku berhasil ditambahkan!");
+        } else {
+            System.out.println("Kapasitas buku sudah penuh!");
+        }
+        return jumlahBuku;
+    }
+
     void cetakInfo() {
         System.out.println("Judul: " + judul);
         System.out.println("Kode: " + kode);
@@ -50,35 +79,6 @@ public class Buku {
             System.out.println("Buku ini tidak sedang dipinjam.");
             return false;
         }
-    }
-
-    static void menu() {
-        System.out.println("\n=== SISTEM PEMINJAMAN BUKU ===");
-        System.out.println("1. Tambah Buku");
-        System.out.println("2. Tambah Mahasiswa");
-        System.out.println("3. Pinjam Buku");
-        System.out.println("4. Kembalikan Buku");
-        System.out.println("5. Tampilkan Semua Buku");
-        System.out.println("6. Tampilkan Semua Mahasiswa");
-        System.out.println("7. Keluar");
-    }
-
-    static int tambahBuku(Scanner sc, Buku[] buku, int jumlahBuku) {
-        if (jumlahBuku < buku.length) {
-            System.out.print("Masukkan Judul Buku: ");
-            String judul = sc.nextLine();
-            System.out.print("Masukkan Kode Buku: ");
-            String kode = sc.nextLine();
-            System.out.print("Masukkan Penulis Buku: ");
-            String penulis = sc.nextLine();
-            
-            buku[jumlahBuku] = new Buku(judul, kode, penulis);
-            jumlahBuku++;
-            System.out.println("Buku berhasil ditambahkan!");
-        } else {
-            System.out.println("Kapasitas buku sudah penuh!");
-        }
-        return jumlahBuku;
     }
 
     static Buku cariBuku(Buku[] daftarBuku, int jumlah, String kode) {
